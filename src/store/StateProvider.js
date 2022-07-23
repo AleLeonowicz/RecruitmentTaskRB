@@ -19,6 +19,7 @@ const StateProvider = props => {
       const data = productsMock.data;
       console.log('data', data);
       setFetchedData(data);
+      setUsersQuery('');
     } catch (err) {
       //   setIsFetchingErr(true);
     }

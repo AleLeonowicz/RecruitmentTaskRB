@@ -1,6 +1,7 @@
 import React, { useContext, Fragment } from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import Categories from './components/Categories/Categories';
 import StateContext from './store/state-context';
 import ProductsList from './components/ProductsList/ProductsList';
@@ -14,6 +15,7 @@ function App() {
       <Header />
       {fetchedData === null && <Categories />}
       {fetchedData !== null && <ProductsList />}
+      <Footer />
     </Fragment>
   );
 }
