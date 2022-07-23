@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classes from './SearchForm.module.scss';
 
+import StateContext from '../../store/state-context';
+
 const SearchForm = () => {
+  const { usersQuery, setUsersQuery } = useContext(StateContext);
+
   const submitFormHandler = event => {
     console.log('event', event);
-    console.log('event.target.value', event.target.value);
+
     event.preventDefault();
-    // fetchData()
+  };
+
+  const usersQueryHandler = event => {
+    setUsersQuery(event.target.value);
+    console.log('usersQuery', usersQuery);
   };
 
   return (
@@ -20,6 +28,8 @@ const SearchForm = () => {
           type="text"
           className={classes.form_input}
           placeholder="What are you looking for?"
+          onChange={event => usersQueryHandler(event)}
+          value={usersQuery}
         />
         <button className={classes.form_btn}>Search</button>
       </form>
