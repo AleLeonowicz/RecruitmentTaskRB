@@ -1,16 +1,20 @@
+import React, { useContext, Fragment } from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
 import Categories from './components/Categories/Categories';
-import StateProvider from './store/StateProvider';
+import StateContext from './store/state-context';
+import ProductsList from './components/ProductsList/ProductsList';
 
 function App() {
+  const { fetchedData } = useContext(StateContext);
+  console.log('fetchedData', fetchedData);
+
   return (
-    <div className="App">
-      <StateProvider>
-        <Header />
-        <Categories />
-      </StateProvider>
-    </div>
+    <Fragment>
+      <Header />
+      {fetchedData === null && <Categories />}
+      {fetchedData !== null && <ProductsList />}
+    </Fragment>
   );
 }
 
