@@ -6,6 +6,13 @@ import { productsMock } from '../mocks/index';
 const StateProvider = props => {
   const [usersQuery, setUsersQuery] = useState('');
   const [fetchedData, setFetchedData] = useState(null);
+  const [sortState, setSortState] = useState('ascending');
+
+  const sortMethods = {
+    // default: (a, b) => null,
+    ascending: (a, b) => a['rating'] - b['rating'],
+    descending: (a, b) => b['rating'] - a['rating'],
+  };
 
   const fetchData = async (event, usersQuery) => {
     event.preventDefault();
@@ -30,6 +37,9 @@ const StateProvider = props => {
     setUsersQuery: setUsersQuery,
     fetchData: fetchData,
     fetchedData: fetchedData,
+    sortState: sortState,
+    setSortState: setSortState,
+    sortMethods: sortMethods,
   };
 
   return (

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import classes from './Navbar.module.scss';
 import { productsMock } from '../../mocks/index';
+import StateContext from '../../store/state-context';
 
 const Navbar = () => {
+  const { setSortState } = useContext(StateContext);
+
   let articlesNumber = productsMock.data.length;
 
   return (
@@ -13,8 +16,13 @@ const Navbar = () => {
           {articlesNumber} articles
           <span>|</span>
         </div>
-        <select name="Sort by ratings">
-          <option value="ascending">Best results</option>
+        <select
+          name="Sort by ratings"
+          defaultValue={'ascending'}
+          onChange={event => {
+            setSortState(event.target.value);
+          }}
+        >
           <option value="ascending">Rating: ascending</option>
           <option value="descending">Rating: descending</option>
         </select>
