@@ -13,7 +13,7 @@ const ListItem = props => {
           <h4>{props.title}</h4>
           <p>Rating: {props.rating}</p>
           <h1>{props.price} €</h1>
-          <button className={classes.addToCartBtn}>Add to cart</button>
+          <button className={classes.detailsBtn}>Show details</button>
         </div>
       </div>
     </div>

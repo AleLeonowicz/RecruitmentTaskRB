@@ -1,0 +1,31 @@
+@import '../../variables.scss';
+
+.container {
+  width: 70%;
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: flex-end;
+
+  &_navBox {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+
+    &_articlesNum {
+      & span {
+        margin: 0 20px;
+      }
+    }
+
+    & select {
+      border-radius: 100px;
+      border: 2px solid $color-highlight;
+      cursor: pointer;
+      background-color: transparent;
+      font-weight: 700;
+      //   width: 100%;
+      padding: 12px;
+    }
+  }
+}

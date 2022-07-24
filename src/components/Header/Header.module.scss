@@ -38,5 +38,13 @@
 
   &_naviContainer {
     width: 23%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    & img {
+      width: 30px;
+      cursor: pointer;
+    }
   }
 }
