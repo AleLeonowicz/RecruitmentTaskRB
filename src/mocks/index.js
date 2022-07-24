@@ -22,7 +22,7 @@ export const productsMock = {
       vendor: 'Apple',
       product_type: 'Smartphone',
       tags: 'electronics',
-      rating: 89,
+      rating: 63,
       price: 679.0,
       image: {
         src: 'https://d1o0zx25fn5p70.cloudfront.net/9CamXx5v3yZS14q9i3YF7R_kIIU=/fit-in/350x350/noupscale/assets.rebuy.de/products/011/168/590/covers/main.jpeg?t=1616251093',
