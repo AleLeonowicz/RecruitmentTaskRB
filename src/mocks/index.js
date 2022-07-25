@@ -8,6 +8,11 @@ export const productsMock = {
       tags: 'electronics',
       rating: 54,
       price: 579.0,
+      color: 'white',
+      rom: '64GB',
+      readyToShip: '1-2',
+      description:
+        'Width: 71.4mm Height: 144mm Depth: 8.1mm Weight: 188g Screen diagonal: 147.32mm (5.8") ROM: 64GB Rear camera: 12MP',
       image: {
         src: 'https://d1o0zx25fn5p70.cloudfront.net/NDUi5jv-YsiCm4lc-Al1Kf-UmP4=/fit-in/350x350/noupscale/assets.rebuy.de/products/011/168/591/covers/main.jpeg?t=1616247099',
         alt: 'Apple Iphone 11',
@@ -21,6 +26,11 @@ export const productsMock = {
       tags: 'electronics',
       rating: 63,
       price: 679.0,
+      color: 'black',
+      rom: '256GB',
+      readyToShip: '1-2',
+      description:
+        'Width: 71.4mm Height: 144mm Depth: 8.1mm Weight: 188g Screen diagonal: 147.32mm (5.8") ROM: 256GB Rear camera: 12MP',
       image: {
         src: 'https://d1o0zx25fn5p70.cloudfront.net/9CamXx5v3yZS14q9i3YF7R_kIIU=/fit-in/350x350/noupscale/assets.rebuy.de/products/011/168/590/covers/main.jpeg?t=1616251093',
         alt: 'Apple Iphone 11',
@@ -34,6 +44,11 @@ export const productsMock = {
       tags: 'electronics',
       rating: 25,
       price: 420.99,
+      color: 'black',
+      rom: '64GB',
+      readyToShip: '1-2',
+      description:
+        'Width: 71.4mm Height: 144mm Depth: 8.1mm Weight: 188g Screen diagonal: 147.32mm (5.8") ROM: 64GB Rear camera: 12MP',
       image: {
         src: 'https://d1o0zx25fn5p70.cloudfront.net/kehDReJWbmpCInO3qxG3No7v0kM=/fit-in/350x350/noupscale/assets.rebuy.de/products/011/168/588/covers/main.jpeg?t=1616246681',
         alt: 'Apple Iphone 11',
@@ -47,6 +62,11 @@ export const productsMock = {
       tags: 'electronics',
       rating: 88,
       price: 449.99,
+      color: 'white',
+      rom: '128GB',
+      readyToShip: '3-4',
+      description:
+        'Width: 71.4mm Height: 144mm Depth: 8.1mm Weight: 188g Screen diagonal: 147.32mm (5.8") ROM: 128GB Rear camera: 12MP',
       image: {
         src: 'https://d1o0zx25fn5p70.cloudfront.net/_fL-tviaFYgwYqvGqs1ukShepTw=/fit-in/350x350/noupscale/assets.rebuy.de/products/011/168/592/covers/main.jpeg?t=1616245863',
         alt: 'Apple Iphone 11',
@@ -60,6 +80,11 @@ export const productsMock = {
       tags: 'electronics',
       rating: 128,
       price: 452.99,
+      color: 'yellow',
+      rom: '64GB',
+      readyToShip: '4-5',
+      description:
+        'Width: 71.4mm Height: 144mm Depth: 8.1mm Weight: 188g Screen diagonal: 147.32mm (5.8") ROM: 64GB Rear camera: 12MP',
       image: {
         src: 'https://d1o0zx25fn5p70.cloudfront.net/zXp3DUVqU3t0hNO8DE3JOh9nvXg=/fit-in/350x350/noupscale/assets.rebuy.de/products/011/168/597/covers/main.jpeg?t=1616249066',
         alt: 'Apple Iphone 11',
@@ -73,6 +98,11 @@ export const productsMock = {
       tags: 'electronics',
       rating: 208,
       price: 393.99,
+      color: 'violet',
+      readyToShip: '4-5',
+      rom: '64GB',
+      description:
+        'Width: 71.4mm Height: 144mm Depth: 8.1mm Weight: 188g Screen diagonal: 147.32mm (5.8") ROM: 64GB Rear camera: 12MP',
       image: {
         src: 'https://d1o0zx25fn5p70.cloudfront.net/pyjSA9rgU0ieHNSK9nmTQMTOxUo=/fit-in/350x350/noupscale/assets.rebuy.de/products/011/168/600/covers/main.jpeg?t=1616266494',
         alt: 'Apple Iphone 11',
@@ -86,6 +116,11 @@ export const productsMock = {
       tags: 'electronics',
       rating: 143,
       price: 449.99,
+      color: 'violet',
+      rom: '128GB',
+      readyToShip: '10',
+      description:
+        'Width: 71.4mm Height: 144mm Depth: 8.1mm Weight: 188g Screen diagonal: 147.32mm (5.8") ROM: 128GB Rear camera: 12MP',
       image: {
         src: 'https://d1o0zx25fn5p70.cloudfront.net/2TvFp3DB3Hfh6QuHV-lp4j1Z664=/fit-in/350x350/noupscale/assets.rebuy.de/products/011/168/601/covers/main.jpeg?t=1616248107',
         alt: 'Apple Iphone 11',
@@ -99,6 +134,11 @@ export const productsMock = {
       tags: 'electronics',
       rating: 306,
       price: 422.99,
+      color: 'green',
+      rom: '64GB',
+      readyToShip: '4-5',
+      description:
+        'Width: 71.4mm Height: 144mm Depth: 8.1mm Weight: 188g Screen diagonal: 147.32mm (5.8") ROM: 64GB Rear camera: 12MP',
       image: {
         src: 'https://d1o0zx25fn5p70.cloudfront.net/vKifNKtJIqh17CzlKgzw2cZV3NE=/fit-in/350x350/noupscale/assets.rebuy.de/products/011/168/594/covers/main.jpeg?t=1616264791',
         alt: 'Apple Iphone 11',

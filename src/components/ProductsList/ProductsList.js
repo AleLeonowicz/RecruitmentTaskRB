@@ -7,7 +7,8 @@ import Navbar from '../Navbar/Navbar';
 import StateContext from '../../store/state-context';
 
 const ProductsList = () => {
-  const { sortState, sortMethods } = useContext(StateContext);
+  const { sortState, sortMethods, setClickedProduct } =
+    useContext(StateContext);
 
   // productsMock.data.sort(sortMethods[sortState].method);
 
@@ -25,6 +26,7 @@ const ProductsList = () => {
               title={el.title}
               rating={el.rating}
               price={el.price}
+              onClick={() => setClickedProduct(el)}
             />
           );
         })}
