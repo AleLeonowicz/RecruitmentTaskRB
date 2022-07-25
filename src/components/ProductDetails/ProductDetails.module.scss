@@ -23,8 +23,35 @@
       margin-bottom: 10px;
     }
 
+    & h3 {
+      margin-bottom: 50px;
+    }
+
     & p {
       margin-bottom: 50px;
+    }
+  }
+
+  .infoContainer_rate {
+    display: flex;
+    align-items: center;
+
+    & h4 {
+      font-weight: 400;
+    }
+  }
+
+  .infoContainer_rateIcons {
+    margin-left: 10px;
+
+    & img {
+      width: 25px;
+      margin-left: 10px;
+      cursor: pointer;
+
+      &:hover {
+        fill: $color-primary;
+      }
     }
   }
 

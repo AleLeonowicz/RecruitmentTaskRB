@@ -11,9 +11,9 @@ function App() {
   const { fetchedData, isCategoryClicked, clickedProduct } =
     useContext(StateContext);
 
-  console.log('clickedProduct', clickedProduct);
-  console.log('fetchedData', fetchedData);
-  console.log('isCategoryClicked', isCategoryClicked);
+  // console.log('clickedProduct', clickedProduct);
+  // console.log('fetchedData', fetchedData);
+  // console.log('isCategoryClicked', isCategoryClicked);
 
   const showCategories = fetchedData === null && !isCategoryClicked;
   const showProductsList =

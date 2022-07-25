@@ -10,11 +10,15 @@ const SearchForm = () => {
     setUsersQuery(event.target.value);
   };
 
+  const submitQueryHandler = (event, usersQuery) => {
+    fetchData(event, usersQuery);
+  };
+
   return (
     <div className={classes.container}>
       <form
         className={classes.form}
-        onSubmit={event => fetchData(event, usersQuery)}
+        onSubmit={event => submitQueryHandler(event)}
       >
         {/* <span></span> */}
         <input
