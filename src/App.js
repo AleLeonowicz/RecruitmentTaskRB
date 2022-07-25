@@ -7,14 +7,19 @@ import StateContext from './store/state-context';
 import ProductsList from './components/ProductsList/ProductsList';
 
 function App() {
-  const { fetchedData } = useContext(StateContext);
+  const { fetchedData, isCategoryClicked } = useContext(StateContext);
+
   console.log('fetchedData', fetchedData);
+  console.log('isCategoryClicked', isCategoryClicked);
+
+  const showCategories = fetchedData === null && !isCategoryClicked;
+  const showProducts = fetchedData !== null || isCategoryClicked;
 
   return (
     <Fragment>
       <Header />
-      {fetchedData === null && <Categories />}
-      {fetchedData !== null && <ProductsList />}
+      {showCategories && <Categories />}
+      {showProducts && <ProductsList />}
       <Footer />
     </Fragment>
   );

@@ -7,7 +7,8 @@ const StateProvider = props => {
   const [usersQuery, setUsersQuery] = useState('');
   const [fetchedData, setFetchedData] = useState(null);
   const [sortState, setSortState] = useState('ascending');
-  const [cartValue, setCartValue] = useState(0);
+  const [isCategoryClicked, setIsCategoryClicked] = useState(false);
+  // const [cartValue, setCartValue] = useState(0);
 
   const sortMethods = {
     ascending: (a, b) => a['rating'] - b['rating'],
@@ -40,6 +41,8 @@ const StateProvider = props => {
     sortState: sortState,
     setSortState: setSortState,
     sortMethods: sortMethods,
+    isCategoryClicked: isCategoryClicked,
+    setIsCategoryClicked: setIsCategoryClicked,
   };
 
   return (

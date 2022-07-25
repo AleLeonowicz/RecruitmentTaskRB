@@ -1,6 +1,3 @@
-// import img0001 from '../assets/mocks/img0001';
-// import img0002 from '../assets/mocks/img0002';
-
 export const productsMock = {
   data: [
     {
@@ -105,6 +102,107 @@ export const productsMock = {
       image: {
         src: 'https://d1o0zx25fn5p70.cloudfront.net/vKifNKtJIqh17CzlKgzw2cZV3NE=/fit-in/350x350/noupscale/assets.rebuy.de/products/011/168/594/covers/main.jpeg?t=1616264791',
         alt: 'Apple Iphone 11',
+      },
+    },
+  ],
+};
+
+export const categoriesMock = {
+  data: [
+    {
+      id: '001',
+      title: 'Smartphones',
+      image: {
+        src: 'https://dyivx00f9izcg.cloudfront.net/images/next/category-cards/landingpage/Categories_LP_handys_xl.rev-59c8ccd36f3d4c1.jpg',
+        alt: 'Smartphones',
+      },
+    },
+    {
+      id: '002',
+      title: 'Tablets & eBook readers',
+      image: {
+        src: 'https://dyivx00f9izcg.cloudfront.net/images/next/category-cards/landingpage/Categories_LP_tablets_xl.rev-2b450bf75dbfc85.jpg',
+        alt: 'Tablets & eBook readers',
+      },
+    },
+    {
+      id: '003',
+      title: 'Consoles and accessories',
+      image: {
+        src: 'https://dyivx00f9izcg.cloudfront.net/images/next/category-cards/landingpage/Categories_LP_consoles_xl.rev-67bdb56c185ebf5.jpg',
+        alt: 'Consoles and accessories',
+      },
+    },
+    {
+      id: '004',
+      title: 'Notebooks',
+      image: {
+        src: 'https://dyivx00f9izcg.cloudfront.net/images/next/category-cards/landingpage/Categories_LP_macbooks_xl.rev-4b0cec427bd8e36.jpg',
+        alt: 'Notebooks',
+      },
+    },
+    {
+      id: '005',
+      title: 'Cameras and accessories',
+      image: {
+        src: 'https://dyivx00f9izcg.cloudfront.net/images/next/category-cards/landingpage/Categories_LP_kameras_xl.rev-5d91921e81201a4.jpg',
+        alt: 'Cameras and accessories',
+      },
+    },
+    {
+      id: '006',
+      title: 'Wearables',
+      image: {
+        src: 'https://dyivx00f9izcg.cloudfront.net/images/next/category-cards/landingpage/Categories_LP_wearables_xl.rev-b4444c6358c5f66.jpg',
+        alt: 'Wearables',
+      },
+    },
+    {
+      id: '007',
+      title: 'Audio & HiFi',
+      image: {
+        src: 'https://dyivx00f9izcg.cloudfront.net/images/next/category-cards/landingpage/Categories_LP_audio_hifi_xl.rev-5e36f4920d3eeaa.jpg',
+        alt: 'Audio & HiFi',
+      },
+    },
+    {
+      id: '008',
+      title: 'Mac mini',
+      image: {
+        src: 'https://dyivx00f9izcg.cloudfront.net/images/next/category-cards/landingpage/Categories_LP_mac_mini_xl.rev-4dd9536b2742c91.jpg',
+        alt: 'Mac mini',
+      },
+    },
+    {
+      id: '009',
+      title: 'Books',
+      image: {
+        src: 'https://dyivx00f9izcg.cloudfront.net/images/next/category-cards/landingpage/Categories_LP_buecher_xl.rev-efa4a46c6f8b34b.jpg',
+        alt: 'Books',
+      },
+    },
+    {
+      id: '010',
+      title: 'Films',
+      image: {
+        src: 'https://dyivx00f9izcg.cloudfront.net/images/next/category-cards/landingpage/Categories_LP_filme_xl.rev-3c68791205601ab.jpg',
+        alt: 'Films',
+      },
+    },
+    {
+      id: '011',
+      title: 'Video games',
+      image: {
+        src: 'https://dyivx00f9izcg.cloudfront.net/images/next/category-cards/landingpage/Categories_LP_videospiele_xl.rev-8309b7f6d5b8fa0.jpg',
+        alt: 'Video games',
+      },
+    },
+    {
+      id: '012',
+      title: 'Music',
+      image: {
+        src: 'https://dyivx00f9izcg.cloudfront.net/images/next/category-cards/landingpage/Categories_LP_musik_xl.rev-2be5475a86da479.jpg',
+        alt: 'Music',
       },
     },
   ],
