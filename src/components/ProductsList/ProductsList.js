@@ -14,15 +14,16 @@ const ProductsList = () => {
 
   let navigate = useNavigate();
 
+  /*eslint-disable */
   useEffect(() => {
     if (!fetchedData) {
       setFetchedData(productsMock.data);
     }
   }, []);
+  /*eslint-enable */
 
   const showDetailsHandler = el => {
     navigate(`/details/${el.id}`);
-    // setFetchedData(productsMock.data);
   };
 
   return (

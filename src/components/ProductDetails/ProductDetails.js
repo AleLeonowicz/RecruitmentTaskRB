@@ -4,9 +4,18 @@ import StateContext from '../../store/state-context';
 import thumbUp from '../../assets/svg/thumbs-up-outline.svg';
 import thumbDown from '../../assets/svg/thumbs-down-outline.svg';
 import { useLocation } from 'react-router-dom';
+import { productsMock } from '../../mocks';
 
 const ProductDetails = () => {
   const { fetchedData, setFetchedData } = useContext(StateContext);
+
+  /*eslint-disable */
+  useEffect(() => {
+    if (!fetchedData) {
+      setFetchedData(productsMock.data);
+    }
+  }, []);
+  /*eslint-enable */
 
   let location = useLocation();
 
@@ -15,9 +24,11 @@ const ProductDetails = () => {
   const [renderedElement, setRenderedElement] = useState(null);
 
   useEffect(() => {
-    const elementToRender = fetchedData.find(el => el.id === productId);
+    if (fetchedData) {
+      const elementToRender = fetchedData.find(el => el.id === productId);
 
-    setRenderedElement(elementToRender);
+      setRenderedElement(elementToRender);
+    }
   }, [productId, fetchedData]);
 
   ///////////////////////////////////////////////////////////////
@@ -80,7 +91,9 @@ const ProductDetails = () => {
                 </p>
               </div>
               <h1>{parseFloat(renderedElement.price).toFixed(2)} €</h1>
-              <button>Add to Cart</button>
+              <a role="button" href="https://www.rebuy.de/">
+                Buy now
+              </a>
               <p>
                 Ready to ship in {renderedElement.readyToShip} business days
               </p>

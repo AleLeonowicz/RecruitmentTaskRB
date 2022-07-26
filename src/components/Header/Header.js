@@ -3,9 +3,11 @@ import classes from './Header.module.scss';
 import logo from '../../assets/Rebuy_Logo_Grey_RGB.png';
 import SearchForm from '../SearchForm/SearchForm';
 import cart from '../../assets/svg/cart.svg';
-import { goToHomePage } from '../../utils/index';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  let navigate = useNavigate();
+
   return (
     <header className={classes.header}>
       <div className={classes.header_top} />
@@ -16,7 +18,7 @@ const Header = () => {
               className={classes.headerContainer_logo}
               alt="rebuy"
               src={logo}
-              onClick={goToHomePage}
+              onClick={() => navigate(`/`)}
             />
           </div>
           <div className={classes.headerContainer_searchContainer}>
