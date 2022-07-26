@@ -24,7 +24,6 @@ const StateProvider = props => {
 
       //   const data = await response.json();
       const data = productsMock.data;
-      console.log('data', data);
       setFetchedData(data);
       setUsersQuery('');
     } catch (err) {

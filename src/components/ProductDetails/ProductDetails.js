@@ -5,6 +5,7 @@ import thumbUp from '../../assets/svg/thumbs-up-outline.svg';
 import thumbDown from '../../assets/svg/thumbs-down-outline.svg';
 import { useLocation } from 'react-router-dom';
 import { productsMock } from '../../mocks';
+import BreadCrumbs from '../BreadCrumbs/BreadCrumbs';
 
 const ProductDetails = () => {
   const { fetchedData, setFetchedData } = useContext(StateContext);
@@ -49,59 +50,62 @@ const ProductDetails = () => {
   ///////////////////////////////////////////////////////////////
 
   return (
-    <div className={classes.detailsContainer}>
-      {renderedElement !== null && (
-        <Fragment>
-          <div className={classes.detailsContainer_imgContainer}>
-            <img
-              src={renderedElement.image.src}
-              alt={renderedElement.image.alt}
-            />
-          </div>
-          <div className={classes.detailsContainer_infoContainer}>
-            <h1>{renderedElement.title}</h1>
-            <p>Product type: {renderedElement.product_type}</p>
-            <p>{renderedElement.description}</p>
-            <h3>Customer rating: {renderedElement.rating}</h3>
-            <div className={classes.infoContainer_rate}>
-              <h4>Do you like this offer?</h4>
-              <div className={classes.infoContainer_rateIcons}>
-                <button
-                  className={classes.infoContainer_upvoteBtn}
-                  onClick={() => voteHandler(1)}
-                >
-                  <img src={thumbUp} alt="Upvote the offer" />
-                </button>
-                <button
-                  className={classes.infoContainer_downvoteBtn}
-                  onClick={() => voteHandler(-1)}
-                >
-                  <img src={thumbDown} alt="Downvote the offer" />
-                </button>
+    <Fragment>
+      <BreadCrumbs title={renderedElement?.title} />
+      <div className={classes.detailsContainer}>
+        {renderedElement !== null && (
+          <Fragment>
+            <div className={classes.detailsContainer_imgContainer}>
+              <img
+                src={renderedElement.image.src}
+                alt={renderedElement.image.alt}
+              />
+            </div>
+            <div className={classes.detailsContainer_infoContainer}>
+              <h1>{renderedElement.title}</h1>
+              <p>Product type: {renderedElement.product_type}</p>
+              <p>{renderedElement.description}</p>
+              <h3>Customer rating: {renderedElement.rating}</h3>
+              <div className={classes.infoContainer_rate}>
+                <h4>Do you like this offer?</h4>
+                <div className={classes.infoContainer_rateIcons}>
+                  <button
+                    className={classes.infoContainer_upvoteBtn}
+                    onClick={() => voteHandler(1)}
+                  >
+                    <img src={thumbUp} alt="Upvote the offer" />
+                  </button>
+                  <button
+                    className={classes.infoContainer_downvoteBtn}
+                    onClick={() => voteHandler(-1)}
+                  >
+                    <img src={thumbDown} alt="Downvote the offer" />
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div className={classes.detailsContainer_addToCartContainer}>
-            <div className={classes.addToCart_backgroundWrapper}>
-              <div className={classes.addToCart_wrapper}>
+            <div className={classes.detailsContainer_addToCartContainer}>
+              <div className={classes.addToCart_backgroundWrapper}>
+                <div className={classes.addToCart_wrapper}>
+                  <p>
+                    {renderedElement.color}
+                    <span>|</span>
+                    {renderedElement.rom}
+                  </p>
+                </div>
+                <h1>{parseFloat(renderedElement.price).toFixed(2)} €</h1>
+                <a role="button" href="https://www.rebuy.de/">
+                  Buy now
+                </a>
                 <p>
-                  {renderedElement.color}
-                  <span>|</span>
-                  {renderedElement.rom}
+                  Ready to ship in {renderedElement.readyToShip} business days
                 </p>
               </div>
-              <h1>{parseFloat(renderedElement.price).toFixed(2)} €</h1>
-              <a role="button" href="https://www.rebuy.de/">
-                Buy now
-              </a>
-              <p>
-                Ready to ship in {renderedElement.readyToShip} business days
-              </p>
             </div>
-          </div>
-        </Fragment>
-      )}
-    </div>
+          </Fragment>
+        )}
+      </div>
+    </Fragment>
   );
 };
 

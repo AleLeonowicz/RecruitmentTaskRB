@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 
-import classes from './Navbar.module.scss';
+import classes from './SortSelect.module.scss';
 import { productsMock } from '../../mocks/index';
 import StateContext from '../../store/state-context';
 
-const Navbar = () => {
+const SortSelect = () => {
   const { setSortState } = useContext(StateContext);
 
   let articlesNumber = productsMock.data.length;
@@ -31,4 +31,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default SortSelect;

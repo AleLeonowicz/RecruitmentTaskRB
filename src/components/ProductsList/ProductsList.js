@@ -3,7 +3,7 @@ import React, { Fragment, useContext, useEffect } from 'react';
 import ListItem from '../ListItem/ListItem';
 import classes from './ProductsList.module.scss';
 import { productsMock } from '../../mocks/index';
-import Navbar from '../Navbar/Navbar';
+import SortSelect from '../SortSelect/SortSelect';
 import StateContext from '../../store/state-context';
 
 import { useNavigate } from 'react-router-dom';
@@ -28,7 +28,7 @@ const ProductsList = () => {
 
   return (
     <Fragment>
-      <Navbar />
+      <SortSelect />
       <div className={classes.productsList_container}>
         {fetchedData !== null &&
           fetchedData.sort(sortMethods[sortState]).map(el => {

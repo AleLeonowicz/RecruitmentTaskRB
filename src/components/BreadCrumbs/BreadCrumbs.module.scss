@@ -1,0 +1,27 @@
+@import '../../variables.scss';
+
+.container {
+  width: 70%;
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: flex-start;
+
+  & button {
+    border: none;
+    background-color: transparent;
+    font-weight: 300;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: $color-font-primary;
+    text-decoration: underline;
+  }
+
+  & p {
+    font-size: 0.9rem;
+    color: $color-font-primary;
+  }
+
+  & span {
+    margin: 0 20px;
+  }
+}
