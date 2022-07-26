@@ -10,7 +10,7 @@ const ProductDetails = () => {
 
   let location = useLocation();
 
-  let productId = location.pathname.substr(9, 4);
+  let productId = location.pathname.split('/details/')[1];
 
   const [renderedElement, setRenderedElement] = useState(null);
 
