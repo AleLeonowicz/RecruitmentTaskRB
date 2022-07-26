@@ -6,11 +6,18 @@ import { productsMock } from '../../mocks/index';
 import Navbar from '../Navbar/Navbar';
 import StateContext from '../../store/state-context';
 
-const ProductsList = () => {
-  const { sortState, sortMethods, setClickedProduct } =
-    useContext(StateContext);
+import { useNavigate } from 'react-router-dom';
 
-  // productsMock.data.sort(sortMethods[sortState].method);
+const ProductsList = () => {
+  const { sortState, sortMethods, setFetchedData } = useContext(StateContext);
+
+  let navigate = useNavigate();
+
+  const showDetailsHandler = el => {
+    // setClickedProduct(el);
+    navigate(`/details/${el.id}`);
+    setFetchedData(productsMock.data);
+  };
 
   return (
     <Fragment>
@@ -26,7 +33,7 @@ const ProductsList = () => {
               title={el.title}
               rating={el.rating}
               price={el.price}
-              onClick={() => setClickedProduct(el)}
+              onClick={() => showDetailsHandler(el)}
             />
           );
         })}
@@ -36,6 +43,3 @@ const ProductsList = () => {
 };
 
 export default ProductsList;
-
-// {data.sort(sortMethods[sortState].method).map((el, i) => (
-//   <li key={i}>{el}</li>

@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import classes from './SearchForm.module.scss';
-
 import StateContext from '../../store/state-context';
+
+import { useNavigate } from 'react-router-dom';
 
 const SearchForm = () => {
   const { usersQuery, setUsersQuery, fetchData } = useContext(StateContext);
+
+  let navigate = useNavigate();
 
   const usersQueryHandler = event => {
     setUsersQuery(event.target.value);
@@ -12,13 +15,14 @@ const SearchForm = () => {
 
   const submitQueryHandler = (event, usersQuery) => {
     fetchData(event, usersQuery);
+    navigate(`/products?query=${usersQuery}`);
   };
 
   return (
     <div className={classes.container}>
       <form
         className={classes.form}
-        onSubmit={event => submitQueryHandler(event)}
+        onSubmit={event => submitQueryHandler(event, usersQuery)}
       >
         {/* <span></span> */}
         <input

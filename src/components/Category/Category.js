@@ -1,14 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import classes from './Category.module.scss';
-import StateContext from '../../store/state-context';
+
+import { useNavigate } from 'react-router-dom';
 
 const Category = props => {
-  const { setIsCategoryClicked } = useContext(StateContext);
+  let navigate = useNavigate();
+
+  const clickCategoryHandler = category => {
+    navigate(`/products/${category.toLowerCase()}`);
+  };
 
   return (
     <div
       className={classes.category_container}
-      onClick={() => setIsCategoryClicked(true)}
+      onClick={() => clickCategoryHandler(props.title)}
     >
       <div className={classes.category_innerContainer}>
         <div className={classes.category_imgContainer}>
