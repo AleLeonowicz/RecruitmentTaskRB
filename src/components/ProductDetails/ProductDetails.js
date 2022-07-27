@@ -8,7 +8,8 @@ import { productsMock } from '../../mocks';
 import BreadCrumbs from '../BreadCrumbs/BreadCrumbs';
 
 const ProductDetails = () => {
-  const { fetchedData, setFetchedData } = useContext(StateContext);
+  const { fetchedData, setFetchedData, usersVotes, setUsersVotes } =
+    useContext(StateContext);
 
   /*eslint-disable */
   useEffect(() => {
@@ -45,6 +46,33 @@ const ProductDetails = () => {
       return el;
     });
     setFetchedData(updatedFetchedData);
+
+    const updatedUsersVotes = usersVotes.map(elementVote => {
+      if (elementVote.productId === renderedElement.id) {
+        return {
+          ...elementVote,
+          vote: voteValue,
+        };
+      }
+      return elementVote;
+    });
+
+    setUsersVotes(updatedUsersVotes);
+  };
+
+  const disableVotingHandler = () => {
+    let isDisabled = false;
+    usersVotes.forEach(elementVote => {
+      if (elementVote.productId === renderedElement.id) {
+        if (elementVote.vote === 0) {
+          isDisabled = false;
+        }
+        if (elementVote.vote === 1 || elementVote.vote === -1) {
+          isDisabled = true;
+        }
+      }
+    });
+    return isDisabled;
   };
 
   ///////////////////////////////////////////////////////////////
@@ -72,12 +100,14 @@ const ProductDetails = () => {
                   <button
                     className={classes.infoContainer_upvoteBtn}
                     onClick={() => voteHandler(1)}
+                    disabled={disableVotingHandler()}
                   >
                     <img src={thumbUp} alt="Upvote the offer" />
                   </button>
                   <button
                     className={classes.infoContainer_downvoteBtn}
                     onClick={() => voteHandler(-1)}
+                    disabled={disableVotingHandler()}
                   >
                     <img src={thumbDown} alt="Downvote the offer" />
                   </button>

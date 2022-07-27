@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import StateContext from './state-context';
 
 import { productsMock } from '../mocks/index';
@@ -7,7 +7,20 @@ const StateProvider = props => {
   const [usersQuery, setUsersQuery] = useState('');
   const [fetchedData, setFetchedData] = useState(null);
   const [sortState, setSortState] = useState('ascending');
+  const [usersVotes, setUsersVotes] = useState(null);
   // const [cartValue, setCartValue] = useState(0);
+
+  useEffect(() => {
+    if (fetchedData && !usersVotes) {
+      const votes = fetchedData.map(product => {
+        return {
+          productId: product.id,
+          vote: 0,
+        };
+      });
+      setUsersVotes(votes);
+    }
+  }, [fetchedData, usersVotes]);
 
   const sortMethods = {
     ascending: (a, b) => a['rating'] - b['rating'],
@@ -40,6 +53,8 @@ const StateProvider = props => {
     sortState: sortState,
     setSortState: setSortState,
     sortMethods: sortMethods,
+    usersVotes: usersVotes,
+    setUsersVotes: setUsersVotes,
   };
 
   return (

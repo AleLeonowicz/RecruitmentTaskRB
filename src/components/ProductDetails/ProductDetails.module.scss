@@ -5,7 +5,7 @@
   margin: 30px auto;
   height: 500px;
   display: flex;
-  min-height: calc(100vh - 380px);
+  min-height: calc(100vh - 432px);
 
   &_imgContainer {
     width: 23%;
@@ -46,23 +46,31 @@
 
     & img {
       width: 25px;
-      margin-left: 10px;
-      cursor: pointer;
-
-      &:hover {
-        fill: $color-primary;
-      }
     }
   }
 
   .infoContainer_upvoteBtn {
     border: none;
     background-color: transparent;
+    cursor: pointer;
+    margin-left: 10px;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
   }
 
   .infoContainer_downvoteBtn {
     border: none;
     background-color: transparent;
+    cursor: pointer;
+    margin-left: 20px;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
   }
 
   &_addToCartContainer {
