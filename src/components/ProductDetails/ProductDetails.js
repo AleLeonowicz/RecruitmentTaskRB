@@ -36,16 +36,16 @@ const ProductDetails = () => {
   ///////////////////////////////////////////////////////////////
 
   const voteHandler = voteValue => {
-    const updatedFetchedData = fetchedData.map(el => {
-      if (el.id === renderedElement.id) {
-        return {
-          ...el,
-          rating: el.rating + voteValue,
-        };
-      }
-      return el;
-    });
-    setFetchedData(updatedFetchedData);
+    // const updatedFetchedData = fetchedData.map(el => {
+    //   if (el.id === renderedElement.id) {
+    //     return {
+    //       ...el,
+    //       rating: el.rating + voteValue,
+    //     };
+    //   }
+    //   return el;
+    // });
+    // setFetchedData(updatedFetchedData);
 
     const updatedUsersVotes = usersVotes.map(elementVote => {
       if (elementVote.productId === renderedElement.id) {
@@ -75,6 +75,10 @@ const ProductDetails = () => {
     return isDisabled;
   };
 
+  const score =
+    renderedElement?.rating +
+    usersVotes?.find(el => el.productId === renderedElement?.id)?.vote;
+
   ///////////////////////////////////////////////////////////////
 
   return (
@@ -93,7 +97,7 @@ const ProductDetails = () => {
               <h1>{renderedElement.title}</h1>
               <p>Product type: {renderedElement.product_type}</p>
               <p>{renderedElement.description}</p>
-              <h3>Customer rating: {renderedElement.rating}</h3>
+              <h3>Customer rating: {score}</h3>
               <div className={classes.infoContainer_rate}>
                 <h4>Do you like this offer?</h4>
                 <div className={classes.infoContainer_rateIcons}>

@@ -9,7 +9,7 @@ import StateContext from '../../store/state-context';
 import { useNavigate } from 'react-router-dom';
 
 const ProductsList = () => {
-  const { sortState, sortMethods, setFetchedData, fetchedData } =
+  const { sortState, sortMethods, setFetchedData, fetchedData, usersVotes } =
     useContext(StateContext);
 
   let navigate = useNavigate();
@@ -32,6 +32,10 @@ const ProductsList = () => {
       <div className={classes.productsList_container}>
         {fetchedData !== null &&
           fetchedData.sort(sortMethods[sortState]).map(el => {
+            const score =
+              el.rating +
+              usersVotes?.find(voteEl => voteEl.productId === el.id)?.vote;
+
             return (
               <ListItem
                 key={el.id}
@@ -39,7 +43,7 @@ const ProductsList = () => {
                 alt={el.image.alt}
                 productType={el.product_type}
                 title={el.title}
-                rating={el.rating}
+                rating={score}
                 price={el.price}
                 onClick={() => showDetailsHandler(el)}
               />
